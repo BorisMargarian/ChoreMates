@@ -13,7 +13,6 @@ class HousesController < ApplicationController
   # GET /houses/1
   # GET /houses/1.json
   def show
-    binding.pry
   end
 
   # GET /houses/new

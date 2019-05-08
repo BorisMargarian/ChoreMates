@@ -1,10 +1,19 @@
 import React, { Component } from "react"
 import { Route, IndexRoute, Router, browserHistory } from "react-router";
+import HouseTile from "../components/HouseTile"
 
 class HousesContainer extends Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      houses: [],
+      current_user: null
+    }
+    this.handleJoinHouse = this.handleJoinHouse.bind(this)
+  }
+  handleJoinHouse(event) {
+    event.preventDefault()
+    debugger
   }
 
   componentDidMount(){
@@ -21,19 +30,30 @@ class HousesContainer extends Component {
     .then(response => response.json())
     .then(body => {
       this.setState({
-        attraction: body.attractions,
-        reviews: body.attractions.reviews,
-        currentUser: body.user
+        houses: body.houses,
+        current_user: body.current_user
       });
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render() {
-    debugger
+    let houses = this.state.houses.map(house => {
+      let handleJoin = () => {
+        this.handleJoinHouse()
+      }
+      return (
+        <HouseTile
+          key={house.id}
+          id={house.id}
+          name={house.name}
+          handleJoin={handleJoin}
+        />
+      )
+    })
     return (
       <div>
-        <p>House component</p>
+        {houses}
       </div>
     )
   }
