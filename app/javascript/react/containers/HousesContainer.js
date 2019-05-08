@@ -6,6 +6,29 @@ class HousesContainer extends Component {
     super(props)
     this.state = {}
   }
+
+  componentDidMount(){
+    fetch(`/api/v1/houses`)
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status}(${response.statusText})`,
+          error = new Error(errorMessage);
+        throw error;
+      }
+    })
+    .then(response => response.json())
+    .then(body => {
+      this.setState({
+        attraction: body.attractions,
+        reviews: body.attractions.reviews,
+        currentUser: body.user
+      });
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
+  }
+
   render() {
     debugger
     return (
