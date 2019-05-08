@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2019_05_07_195616) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username", null: false
+    t.integer "balance", default: 0, null: false
     t.bigint "house_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["house_id"], name: "index_users_on_house_id"
