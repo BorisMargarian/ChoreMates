@@ -11,9 +11,31 @@ class HousesContainer extends Component {
     }
     this.handleJoinHouse = this.handleJoinHouse.bind(this)
   }
-  handleJoinHouse(event) {
-    event.preventDefault()
-    debugger
+
+  handleJoinHouse(houseId) {
+    fetch(`/api/v1/users/${houseId}`, {
+      credentials: "same-origin",
+      method: "PATCH",
+      body: JSON.stringify(houseId),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      }
+    })
+      .then(response => {
+        if (response.ok) {
+          return response;
+        } else {
+          let errorMessage = `${response.status} (${response.statusText})`,
+            error = new Error(errorMessage);
+          throw error;
+        }
+      })
+      .then(response => response.json())
+      .then(body => {
+        window.location.href = `/houses/${body.current_user.house_id}`
+      })
+      .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   componentDidMount(){
@@ -40,13 +62,14 @@ class HousesContainer extends Component {
   render() {
     let houses = this.state.houses.map(house => {
       let handleJoin = () => {
-        this.handleJoinHouse()
+        this.handleJoinHouse(house.id)
       }
       return (
         <HouseTile
           key={house.id}
           id={house.id}
           name={house.name}
+          password={house.password}
           handleJoin={handleJoin}
         />
       )
