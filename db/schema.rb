@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_07_195616) do
+ActiveRecord::Schema.define(version: 2019_05_09_213259) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "chores", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "description"
+    t.datetime "due", default: -> { "CURRENT_TIMESTAMP" }
+    t.integer "cost", default: 0
+    t.string "status", default: "unclaimed"
+    t.string "chore_photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "house_id"
+    t.bigint "user_id"
+    t.index ["house_id"], name: "index_chores_on_house_id"
+    t.index ["user_id"], name: "index_chores_on_user_id"
+  end
 
   create_table "houses", force: :cascade do |t|
     t.string "name", null: false

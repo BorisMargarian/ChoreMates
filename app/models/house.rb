@@ -3,4 +3,5 @@ class House < ApplicationRecord
   validates :password, presence: true
 
   has_many :users, dependent: :destroy
+  has_many :chores, dependent: :destroy
 end
