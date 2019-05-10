@@ -1,0 +1,19 @@
+<div>
+  <h2>Add New Chore:</h2>
+  <%= form_for(@chore) do |f| %>
+
+      <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+    </div>
+
+    <div class="actions">
+      <%= f.button "Add", :class => "submit-button"%>
+    </div>
+  <% end %>
+</div>
