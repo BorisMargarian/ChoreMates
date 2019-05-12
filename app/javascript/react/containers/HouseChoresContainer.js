@@ -68,6 +68,10 @@ class HouseChoresContainer extends Component {
       header = `Chores for the house of ${this.state.house.name}`
     }
     let houseChores = this.state.chores.map(chore => {
+      let url
+      if (chore.chore_photo) {
+        url = chore.chore_photo.url
+      }
       return (
         <HouseChoreTile
           key={chore.id}
@@ -76,6 +80,7 @@ class HouseChoresContainer extends Component {
           due={chore.due}
           user={chore.user}
           status={chore.status}
+          image={url}
           handleClaimChore={this.handleClaimChore}
           current_user_id={this.state.current_user.id}
         />

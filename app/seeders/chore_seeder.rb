@@ -1,9 +1,10 @@
 class ChoreSeeder
   CHORE_DATA = [
-    {name: "Take Out Trash", description: "From: kitchen, bathroom, and office", house: House.first, due: "2019-05-15 19:12:19"},
-    {name: "Do Dishes", description: "Empty sink, load-up the dishwater, run the dishwasher, empty the dishwasher", house: House.first, due: "2019-05-16 19:12:19"},
-    {name: "Clean Kitchen", description: "Counters, sink, table, and floors", house: House.first, due: "2019-05-17 19:12:19"},
-    {name: "Empty Fridge", description: "Some of the stuff has been there for awhile, if it is yours - throw it in the trash", house: House.first, due: "2019-05-18 19:12:19"},
+    {name: "Take Out Trash", description: "From: kitchen, bathroom, and office", house: House.first, due: "2019-05-15 19:12:19", remote_chore_photo_url: "https://s3.amazonaws.com/chore-mates-development/defaults/trash.jpg"},
+    {name: "Do Dishes", description: "Empty sink, load-up the dishwater, run the dishwasher, empty the dishwasher", house: House.first, due: "2019-05-16 19:12:19", remote_chore_photo_url: "https://s3.amazonaws.com/chore-mates-development/defaults/dishes.jpg"},
+    {name: "Clean Kitchen", description: "Counters, sink, table, and floors", house: House.first, due: "2019-05-17 19:12:19", remote_chore_photo_url: "https://s3.amazonaws.com/chore-mates-development/defaults/kitchen.jpg"},
+    {name: "Empty Fridge", description: "Some of the stuff has been there for awhile, if it is yours - throw it in the trash", house: House.first, due: "2019-05-18 19:12:19", remote_chore_photo_url: "https://s3.amazonaws.com/chore-mates-development/defaults/fridge.jpg"},
+    {name: "Buy Supplies", description: "We need to restock on cleaning and laundry supplies", cost: 100, house: House.first, due: "2019-05-21 19:12:19", remote_chore_photo_url: "https://s3.amazonaws.com/chore-mates-development/defaults/no-image.gif"},
     {name: "Have One", description: "Have a claimed chore", house: House.first, due: "2019-05-19 19:12:19", status: "claimed", user: User.first},
     {name: "Have Another", description: "Have two claimed chores", house: House.first, due: "2019-05-20 19:12:19", status: "claimed", user: User.first}
   ]
