@@ -42,10 +42,10 @@ const HouseChoreTile = props => {
   }
 
   return (
-    <div>
-    <div className="" >
-      <img src={`${props.image}`} className="" />
-    </div>
+    <div className="chore-tile">
+      <div className="" >
+        <img src={`${props.image}`} className="" />
+      </div>
       <h3>Chore: {props.name}</h3>
       <p>Assigned to: {assigned}</p>
       <p>Due by: {props.due}</p>

@@ -76,7 +76,10 @@ class HousesContainer extends Component {
     })
     return (
       <div>
-        {houses}
+        <h2 className="house-header">Please join a house!</h2>
+        <div className="scroll box">
+          {houses}
+        </div>
       </div>
     )
   }
