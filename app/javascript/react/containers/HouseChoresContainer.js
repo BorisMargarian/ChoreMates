@@ -88,7 +88,9 @@ class HouseChoresContainer extends Component {
     })
     return (
       <div>
-        <h2>{header}</h2>
+        <div className="chore-header">
+          <h2>{header}</h2>
+        </div>
         <div className="scroll box">
           {houseChores}
         </div>

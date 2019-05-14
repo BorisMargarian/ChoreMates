@@ -1,4 +1,5 @@
 import React from "react"
+import { Route, IndexRoute, Router, Link, browserHistory } from "react-router";
 
 const HouseChoreTile = props => {
   let assigned = "NA", claimButton, completeButton
@@ -64,9 +65,11 @@ const HouseChoreTile = props => {
 
   return (
     <div className="chore-tile">
-      <div className="" >
-        <img src={`${props.image}`} className="" />
-      </div>
+      <Link to={`/chores/${props.id}`} >
+        <div className="" >
+          <img src={`${props.image}`} className="" />
+        </div>
+      </Link>
       <h3>Chore: {props.name}</h3>
       <p>Assigned to: {assigned}</p>
       <p>Status: {props.status}</p>
