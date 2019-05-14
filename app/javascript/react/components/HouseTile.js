@@ -12,17 +12,21 @@ const HouseTile = props => {
   }
 
   return (
-    <div>
+    <div className="house-tile">
       <form className="" onSubmit={handleSubmit}>
-        <h3>{props.name}</h3>
-        <label name={props.name} >Password
-          <input type="password" name="password"/>
-        </label>
-        <input
-          className="button"
-          type="submit"
-          value="Join this House"
-        />
+        <h3>House {props.name}</h3>
+        <div className="house-join">
+          <label name={props.name} >Password
+            <input className="p-field" type="password" name="password"/>
+          </label>
+        </div>
+        <div className="house-join">
+          <input
+            className="button"
+            type="submit"
+            value={`Join the ${props.name} House`}
+          />
+        </div>
       </form>
     </div>
   )

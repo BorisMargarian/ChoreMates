@@ -1,0 +1,129 @@
+@import './constants';
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: rgba(0,0,0,.5);
+  -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+.scroll{
+  background-color: $light-blue;
+  margin-top: 2%;
+  margin-bottom: 5%;
+  height: 450px;
+  // margin: auto;
+  // width: 70%;
+  // max-width: 600px;
+  overflow-y: scroll;
+}
+
+.box {
+  padding: 10px 10px 10px 10px;
+  border-color: $border-color;
+  border-radius: 10px;
+  border-width: medium;
+  border-style: solid;
+  margin: auto;
+  width: 60%;
+  max-width: 700px;
+}
+
+body {
+  background: url(https://s3.amazonaws.com/chore-mates-development/defaults/background-image-smaller.jpg)
+  no-repeat
+  center
+  fixed
+  ;
+  background-size: cover;
+}
+
+// User Registration and Sign-in
+.form {
+  padding: 0 10px 10px 10px;
+  background-color: $light-blue;
+  // margin: 2% 20%;
+  border-radius: 5px;
+  margin: auto;
+  width: 50%;
+}
+
+h2.form-header {
+  font-size: 20px;
+  margin-top: 10px;
+  padding-top: 10px;
+  font-weight: bold;
+  // color: ;
+  // font-family: ;
+}
+
+.actions, .button_to {
+  input {
+    color: $button-text;
+    background-color: $button-background;
+    border: none;
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  input:hover, input:focus {
+    color: $hover-text;
+    background-color: $hover-background;
+    outline: none;
+  }
+}
+
+.shared-links {
+  display: flex;
+  justify-content: flex-start;
+  text-align: left;
+}
+.link {
+  // display: inline-block;
+  margin-right: 1em;
+}
+
+.house-header {
+  padding: 10px 10px 10px 10px;
+  border-color: $border-color;
+  border-radius: 10px;
+  border-width: medium;
+  border-style: solid;
+  margin: auto;
+  width: 60%;
+  max-width: 700px;
+  background-color: $light-blue;
+  margin-top: 2%;
+}
+.house-tile {
+  // display: flex;
+  // justify-content: flex-start;
+  background-color: $tile-background;
+  margin-bottom: 25px;
+  margin-right: 25px;
+  padding: 10px 10px 10px 10px;
+  border-radius: 10px;
+  border-width: medium;
+  box-shadow: 10px 5px 5px lightslategrey;
+}
+// .house-join {
+//   display: inline;
+// }
+//
+// .p-field {
+//   width: 50%;
+// }
+
+.chore-tile {
+  background-color: $tile-background;
+  margin-bottom: 25px;
+  margin-right: 25px;
+  padding: 10px 10px 10px 10px;
+  border-radius: 10px;
+  border-width: medium;
+  box-shadow: 10px 5px 5px lightslategrey;
+}
