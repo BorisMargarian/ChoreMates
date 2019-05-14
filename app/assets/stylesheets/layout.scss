@@ -110,13 +110,20 @@ h2.form-header {
   border-width: medium;
   box-shadow: 10px 5px 5px lightslategrey;
 }
-// .house-join {
-//   display: inline;
-// }
-//
-// .p-field {
-//   width: 50%;
-// }
+.password-join {
+  display: flex;
+  // width: 100%;
+  justify-content: space-between;
+}
+
+.house-join {
+  width: 50%;
+}
+
+.join-button {
+  margin-top: 10px;
+  // height: 40px;
+}
 
 .chore-tile {
   background-color: $tile-background;

@@ -1,7 +1,7 @@
 import React from "react"
 
 const HouseChoreTile = props => {
-  let assigned = "NA", claimButton
+  let assigned = "NA", claimButton, completeButton
   if (props.user) {
     assigned = props.user.username
   }
@@ -18,7 +18,20 @@ const HouseChoreTile = props => {
       id: props.id,
       status: newStatus
     }
-    props.handleClaimChore(payload)
+    props.choreStatusChange(payload)
+  }
+
+  let clickComplete = (event) => {
+    event.preventDefault()
+    let newStatus
+    if (props.status === "claimed") {
+      newStatus = "complete"
+    }
+    let payload = {
+      id: props.id,
+      status: newStatus
+    }
+    props.choreStatusChange(payload)
   }
 
   if (props.status === "unclaimed") {
@@ -26,17 +39,25 @@ const HouseChoreTile = props => {
       <input
         className="button"
         type="button"
-        value="Claim Chore"
+        value="Claim"
         onClick={clickClaimChore}
       />
     )
-  } else if (props.user && props.user.id === props.current_user_id) {
+  } else if (props.user && props.user.id === props.current_user_id && props.status === "claimed") {
     claimButton = (
       <input
         className="button"
         type="button"
-        value="Unclaim Chore"
+        value="Unclaim"
         onClick={clickClaimChore}
+      />
+    )
+    completeButton = (
+      <input
+        className="button"
+        type="button"
+        value="Complete"
+        onClick={clickComplete}
       />
     )
   }
@@ -48,8 +69,9 @@ const HouseChoreTile = props => {
       </div>
       <h3>Chore: {props.name}</h3>
       <p>Assigned to: {assigned}</p>
+      <p>Status: {props.status}</p>
       <p>Due by: {props.due}</p>
-      {claimButton}
+      {claimButton} {completeButton}
     </div>
   )
 }

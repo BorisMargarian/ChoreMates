@@ -10,7 +10,7 @@ class HouseChoresContainer extends Component {
       chores: [],
       current_user: null
     }
-    this.handleClaimChore = this.handleClaimChore.bind(this)
+    this.choreStatusChange = this.choreStatusChange.bind(this)
   }
 
   componentDidMount() {
@@ -35,7 +35,7 @@ class HouseChoresContainer extends Component {
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
-  handleClaimChore(payload) {
+  choreStatusChange(payload) {
     let houseId = this.state.house.id
     fetch(`/api/v1/houses/${houseId}`, {
       credentials: "same-origin",
@@ -81,7 +81,7 @@ class HouseChoresContainer extends Component {
           user={chore.user}
           status={chore.status}
           image={url}
-          handleClaimChore={this.handleClaimChore}
+          choreStatusChange={this.choreStatusChange}
           current_user_id={this.state.current_user.id}
         />
       )
