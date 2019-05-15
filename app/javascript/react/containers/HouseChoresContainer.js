@@ -9,7 +9,7 @@ class HouseChoresContainer extends Component {
       house: null,
       chores: [],
       current_user: null,
-      filteredChores: []
+      choreType: "house"
     }
     this.choreStatusChange = this.choreStatusChange.bind(this)
   }
@@ -64,11 +64,30 @@ class HouseChoresContainer extends Component {
   }
 
   render() {
-    let header
+    let header, houseChores, myChores
     if (this.state.house) {
-      header = `Chores for the house of ${this.state.house.name}`
+      houseChores = (<input
+        className="button"
+        type="button"
+        name="house"
+        value={`${this.state.house.name} Chores`}
+        onClick={this.showHouseForm}
+      />)
+      myChores = (<input
+        className="button"
+        type="button"
+        name="mine"
+        value="My Chores"
+        onClick={this.showHouseForm}
+      />)
+      header = (
+        <div>
+          {houseChores}{myChores}
+        </div>
+      )
     }
-    let houseChores = this.state.chores.map(chore => {
+
+    let choreList = this.state.chores.map(chore => {
       let url
       if (chore.chore_photo) {
         url = chore.chore_photo.url
@@ -87,13 +106,16 @@ class HouseChoresContainer extends Component {
         />
       )
     })
+    if (choreList.length === 0) {
+      choreList = <h3>Create some chores and they will show-up here!</h3>
+    }
     return (
       <div>
         <div className="chore-header">
           <h2>{header}</h2>
         </div>
         <div className="scroll box">
-          {houseChores}
+          {choreList}
         </div>
       </div>
     )

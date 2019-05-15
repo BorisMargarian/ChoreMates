@@ -1,16 +1,5 @@
 @import './constants';
 
-::-webkit-scrollbar {
-  -webkit-appearance: none;
-  width: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 5px;
-  background-color: rgba(0,0,0,.5);
-  -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
-}
-
 .scroll{
   background-color: $light-blue;
   margin-top: 2%;
@@ -21,6 +10,10 @@
   // max-width: 600px;
   overflow-y: scroll;
 }
+
+// .button {
+//   background-color: $button-background;
+// }
 
 .box {
   padding: 10px 10px 10px 10px;
@@ -59,22 +52,6 @@ h2.form-header {
   font-weight: bold;
   // color: ;
   // font-family: ;
-}
-
-.actions, .button_to {
-  input {
-    color: $button-text;
-    background-color: $button-background;
-    border: none;
-    padding: 10px;
-    font-size: 12px;
-  }
-
-  input:hover, input:focus {
-    color: $hover-text;
-    background-color: $hover-background;
-    outline: none;
-  }
 }
 
 .shared-links {
