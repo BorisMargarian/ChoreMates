@@ -1,8 +1,10 @@
 @import './constants';
 
-.button {
-  background-color: $button-background;
-}
+// These do not seem to work from this file for some reason. Putting the below in
+// layout.scss seems to fix the problem however
+// .button {
+//   background-color: $button-background;
+// }
 
 .actions, .button_to {
   input {

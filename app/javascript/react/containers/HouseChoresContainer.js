@@ -12,6 +12,7 @@ class HouseChoresContainer extends Component {
       choreType: "house"
     }
     this.choreStatusChange = this.choreStatusChange.bind(this)
+    this.choreTypeSelect = this.choreTypeSelect.bind(this)
   }
 
   componentDidMount() {
@@ -36,6 +37,11 @@ class HouseChoresContainer extends Component {
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
+  choreTypeSelect(event) {
+    event.preventDefault()
+    this.setState({ choreType: event.target.name })
+  }
+
   choreStatusChange(payload) {
     let houseId = this.state.house.id
     fetch(`/api/v1/houses/${houseId}`, {
@@ -47,39 +53,59 @@ class HouseChoresContainer extends Component {
         "Content-Type": "application/json"
       }
     })
-      .then(response => {
-        if (response.ok) {
-          return response;
-        } else {
-          let errorMessage = `${response.status} (${response.statusText})`,
-            error = new Error(errorMessage);
-          throw error;
-        }
-      })
-      .then(response => response.json())
-      .then(body => {
-        this.setState({ chores: body.chores });
-      })
-      .catch(error => console.error(`Error in fetch: ${error.message}`));
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+          error = new Error(errorMessage);
+        throw error;
+      }
+    })
+    .then(response => response.json())
+    .then(body => {
+      this.setState({ chores: body.chores });
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render() {
-    let header, houseChores, myChores
+    let header, houseChores, myChores, filteredChores
+    let houseChoresClass = "button"
+    let myChoresClass = "button"
+    let current_user = this.state.current_user
+
+    if (this.state.choreType === "house") {
+      houseChoresClass += " selected"
+      filteredChores = this.state.chores
+    } else if (this.state.choreType === "mine") {
+      myChoresClass += " selected"
+      filteredChores = this.state.chores.filter(chore => {
+        if (chore.user && current_user) {
+          return chore.user.id === current_user.id
+        }
+      })
+    }
+
     if (this.state.house) {
-      houseChores = (<input
-        className="button"
-        type="button"
-        name="house"
-        value={`${this.state.house.name} Chores`}
-        onClick={this.showHouseForm}
-      />)
-      myChores = (<input
-        className="button"
-        type="button"
-        name="mine"
-        value="My Chores"
-        onClick={this.showHouseForm}
-      />)
+      houseChores = (
+          <input
+            className={houseChoresClass}
+            type="button"
+            name="house"
+            value={`${this.state.house.name} Chores`}
+            onClick={this.choreTypeSelect}
+          />
+      )
+      myChores = (
+        <input
+          className={myChoresClass}
+          type="button"
+          name="mine"
+          value="My Chores"
+          onClick={this.choreTypeSelect}
+        />
+      )
       header = (
         <div>
           {houseChores}{myChores}
@@ -87,7 +113,9 @@ class HouseChoresContainer extends Component {
       )
     }
 
-    let choreList = this.state.chores.map(chore => {
+
+
+    let choreList = filteredChores.map(chore => {
       let url
       if (chore.chore_photo) {
         url = chore.chore_photo.url
