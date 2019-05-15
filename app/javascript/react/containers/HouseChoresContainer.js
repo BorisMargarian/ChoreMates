@@ -8,7 +8,8 @@ class HouseChoresContainer extends Component {
     this.state = {
       house: null,
       chores: [],
-      current_user: null
+      current_user: null,
+      filteredChores: []
     }
     this.choreStatusChange = this.choreStatusChange.bind(this)
   }
