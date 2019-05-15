@@ -1,11 +1,11 @@
 class HouseSeeder
   HOUSE_DATA = [
-    {name: "Stark", password: "winteriscoming"},
-    {name: "Targaryen", password: "fireandblood"},
-    {name: "Lannister", password: "hearmeroar"},
-    {name: "Greyjoy", password: "wedonotsow"},
-    {name: "Baratheon", password: "oursisthefury"},
-    {name: "Tyrell", password: "growingstrong"}
+    {name: "House Stark", password: "winteriscoming"},
+    {name: "House Targaryen", password: "fireandblood"},
+    {name: "House Lannister", password: "hearmeroar"},
+    {name: "House Greyjoy", password: "wedonotsow"},
+    {name: "House Baratheon", password: "oursisthefury"},
+    {name: "House Tyrell", password: "growingstrong"}
   ]
 
   def self.seed!

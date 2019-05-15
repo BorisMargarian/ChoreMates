@@ -1,4 +1,4 @@
-<div>
+<div class="new-chore">
   <h2>Add New Chore:</h2>
   <%= form_for(@chore) do |f| %>
 
@@ -9,10 +9,10 @@
 
     <div class="field">
       <%= f.label :description %>
-      <%= f.text_field :description %>
+      <%= f.text_area :description %>
     </div>
 
-    <div class="field">
+    <div class="field div-date">
       <%= f.label :due %>
       <%= f.date_select :due %>
     </div>

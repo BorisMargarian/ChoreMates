@@ -43,13 +43,13 @@ body {
 }
 
 // User Registration and Sign-in
-.form {
+.form, .new-chore {
   padding: 0 10px 10px 10px;
   background-color: $light-blue;
-  // margin: 2% 20%;
   border-radius: 5px;
   margin: auto;
   width: 50%;
+  margin-top: 15px;
 }
 
 h2.form-header {
@@ -87,7 +87,7 @@ h2.form-header {
   margin-right: 1em;
 }
 
-.house-header {
+.house-header, .chore-header {
   padding: 10px 10px 10px 10px;
   border-color: $border-color;
   border-radius: 10px;
@@ -110,13 +110,24 @@ h2.form-header {
   border-width: medium;
   box-shadow: 10px 5px 5px lightslategrey;
 }
-// .house-join {
-//   display: inline;
-// }
-//
-// .p-field {
-//   width: 50%;
-// }
+.password-join, .div-date {
+  display: flex;
+  // width: 100%;
+  justify-content: space-between;
+}
+
+#chore_due_1i, #chore_due_2i, #chore_due_3i {
+  width: 25%;
+}
+
+.house-join {
+  width: 50%;
+}
+
+.join-button {
+  margin-top: 10px;
+  // height: 40px;
+}
 
 .chore-tile {
   background-color: $tile-background;

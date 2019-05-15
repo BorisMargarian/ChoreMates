@@ -3,6 +3,10 @@ class ChoresController < ApplicationController
     @chore = Chore.new
   end
 
+  def show
+
+  end
+
   def create
     @chore = Chore.new(chore_params)
     @chore.house = current_user.house
