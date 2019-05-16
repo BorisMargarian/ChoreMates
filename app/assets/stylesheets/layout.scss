@@ -1,14 +1,23 @@
 @import './constants';
 
-::-webkit-scrollbar {
-  -webkit-appearance: none;
-  width: 10px;
+.top-bar {
+  // background-color: $border-color;
+  height: 65px;
+  padding: 10px 5% 0 5%;
 }
 
-::-webkit-scrollbar-thumb {
-  border-radius: 5px;
-  background-color: rgba(0,0,0,.5);
-  -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+.chore-image {
+  float: right;
+  max-width: 40%;
+  max-height: 200px;
+  padding: 0 0 0px 0;
+  border-width: 5px;
+  border-color: black;
+  border-style: double;
+}
+
+.chore-text {
+  max-width: 50%
 }
 
 .scroll{
@@ -61,22 +70,6 @@ h2.form-header {
   // font-family: ;
 }
 
-.actions, .button_to {
-  input {
-    color: $button-text;
-    background-color: $button-background;
-    border: none;
-    padding: 10px;
-    font-size: 12px;
-  }
-
-  input:hover, input:focus {
-    color: $hover-text;
-    background-color: $hover-background;
-    outline: none;
-  }
-}
-
 .shared-links {
   display: flex;
   justify-content: flex-start;
@@ -98,6 +91,11 @@ h2.form-header {
   max-width: 700px;
   background-color: $light-blue;
   margin-top: 2%;
+}
+
+.header-buttons {
+  display: flex;
+  justify-content: space-between;
 }
 .house-tile {
   // display: flex;
@@ -137,4 +135,41 @@ h2.form-header {
   border-radius: 10px;
   border-width: medium;
   box-shadow: 10px 5px 5px lightslategrey;
+  overflow: hidden;
+}
+
+.button {
+  background-color: $button-background;
+  border-radius: 5px !important;
+  box-shadow: 5px 5px 5px lightslategrey;
+  margin: 0 5px 0 5px;
+  &:focus {
+    color: $hover-text;
+    background-color: $button-background;
+    outline: none;
+  }
+  &:hover {
+    color: $hover-text;
+    background-color: $hover-background;
+    outline: none;
+  }
+  &:active {
+    color: $hover-text;
+    background-color: $hover-background;
+    outline: none;
+  }
+}
+
+.selected {
+  background-color: $hover-background;
+  &:focus {
+    color: $hover-text;
+    background-color: $hover-background;
+    outline: none;
+  }
+  &:hover {
+    color: $hover-text;
+    background-color: $hover-background;
+    outline: none;
+  }
 }

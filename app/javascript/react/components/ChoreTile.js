@@ -1,4 +1,5 @@
 import React from "react"
+import moment from 'moment'
 
 const ChoreTile = props => {
   let assigned = "NA", claimButton, completeButton
@@ -16,7 +17,7 @@ const ChoreTile = props => {
       <p>Cost: ${props.cost}</p>
       <p>Assigned to: {assigned}</p>
       <p>Status: {props.status}</p>
-      <p>Due by: {props.due}</p>
+      <p>Due: {moment(props.due).format('DD/MM/YYYY on dddd')}</p>
     </div>
   )
 }

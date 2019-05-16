@@ -3,6 +3,9 @@ class HousesController < ApplicationController
   # GET /houses
   # GET /houses.json
   def index
+    if current_user.house
+      redirect_to house_path(current_user.house)
+    end
     @houses = House.all
   end
 

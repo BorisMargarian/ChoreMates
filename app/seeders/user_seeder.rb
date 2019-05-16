@@ -1,5 +1,5 @@
 class UserSeeder
-  STARK = House.find_by(name: "Stark")
+  STARK = House.find_by(name: "House Stark")
   USER_DATA = [
     {username: "BorisMargarian", email: "margarian.boris@gmail.com", password: "123456"},
     {username: "JohnSnow", email: "john.snow@gmail.com", password: "123456", house: STARK},

@@ -1,5 +1,6 @@
 import React from "react"
 import { Route, IndexRoute, Router, Link, browserHistory } from "react-router";
+import moment from 'moment'
 
 const HouseChoreTile = props => {
   let assigned = "NA", claimButton, completeButton
@@ -63,17 +64,26 @@ const HouseChoreTile = props => {
     )
   }
 
+  let backgroundColor
+  if (props.status === "complete") {
+    backgroundColor = {backgroundColor: '#D3F6DB'}
+  } else if (props.status === "claimed") {
+    backgroundColor = {backgroundColor: '#FEFF99'}
+  }
+
   return (
-    <div className="chore-tile">
-      <Link to={`/chores/${props.id}`} >
-        <div className="" >
-          <img src={`${props.image}`} className="" />
+    <div className="chore-tile" style={backgroundColor}>
+      <div className="" >
+        <Link to={`/chores/${props.id}`} >
+            <img src={`${props.image}`} className="chore-image" />
+        </Link>
+        <div className="chore-text">
+          <h4>Chore: {props.name}</h4>
+          <p>Assigned to: {assigned}<br/>
+          Status: {props.status}<br/>
+          Due: {moment(props.due).format('DD/MM/YYYY on dddd')}</p>
         </div>
-      </Link>
-      <h3>Chore: {props.name}</h3>
-      <p>Assigned to: {assigned}</p>
-      <p>Status: {props.status}</p>
-      <p>Due by: {props.due}</p>
+      </div>
       {claimButton} {completeButton}
     </div>
   )

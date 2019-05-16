@@ -3,6 +3,18 @@ $border-color: #69470b;
 
 $button-background: black;
 $button-text: white;
-$hover-background: red;
+$hover-background: $border-color;
 $hover-text: white;
 $tile-background: #CDCDCD;
+$complete-green: #D3F6DB;
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: rgba(0,0,0,.5);
+  -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}

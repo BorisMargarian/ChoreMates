@@ -1,0 +1,23 @@
+@import './constants';
+
+// These do not seem to work from this file for some reason. Putting the below in
+// layout.scss seems to fix the problem however
+// .button {
+//   background-color: $button-background;
+// }
+
+.actions, .button_to {
+  input {
+    color: $button-text;
+    background-color: $button-background;
+    border: none;
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  input:hover, input:focus {
+    color: $hover-text;
+    background-color: $hover-background;
+    outline: none;
+  }
+}
