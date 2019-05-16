@@ -1,5 +1,25 @@
 @import './constants';
 
+.top-bar {
+  // background-color: $border-color;
+  height: 65px;
+  padding: 10px 5% 0 5%;
+}
+
+.chore-image {
+  float: right;
+  max-width: 40%;
+  max-height: 200px;
+  padding: 0 0 0px 0;
+  border-width: 5px;
+  border-color: black;
+  border-style: double;
+}
+
+.chore-text {
+  max-width: 50%
+}
+
 .scroll{
   background-color: $light-blue;
   margin-top: 2%;
@@ -72,6 +92,11 @@ h2.form-header {
   background-color: $light-blue;
   margin-top: 2%;
 }
+
+.header-buttons {
+  display: flex;
+  justify-content: space-between;
+}
 .house-tile {
   // display: flex;
   // justify-content: flex-start;
@@ -110,16 +135,25 @@ h2.form-header {
   border-radius: 10px;
   border-width: medium;
   box-shadow: 10px 5px 5px lightslategrey;
+  overflow: hidden;
 }
 
 .button {
   background-color: $button-background;
+  border-radius: 5px !important;
+  box-shadow: 5px 5px 5px lightslategrey;
+  margin: 0 5px 0 5px;
   &:focus {
     color: $hover-text;
     background-color: $button-background;
     outline: none;
   }
   &:hover {
+    color: $hover-text;
+    background-color: $hover-background;
+    outline: none;
+  }
+  &:active {
     color: $hover-text;
     background-color: $hover-background;
     outline: none;

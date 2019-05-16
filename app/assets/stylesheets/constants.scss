@@ -3,9 +3,10 @@ $border-color: #69470b;
 
 $button-background: black;
 $button-text: white;
-$hover-background: red;
+$hover-background: $border-color;
 $hover-text: white;
 $tile-background: #CDCDCD;
+$complete-green: #D3F6DB;
 
 ::-webkit-scrollbar {
   -webkit-appearance: none;

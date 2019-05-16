@@ -107,7 +107,7 @@ class HouseChoresContainer extends Component {
         />
       )
       header = (
-        <div>
+        <div className="header-buttons">
           {houseChores}{myChores}
         </div>
       )
@@ -135,7 +135,7 @@ class HouseChoresContainer extends Component {
       )
     })
     if (choreList.length === 0) {
-      choreList = <h3>Create some chores and they will show-up here!</h3>
+      choreList = <h3>No chores here! Make and/or claim some!</h3>
     }
     return (
       <div>

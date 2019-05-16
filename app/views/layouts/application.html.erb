@@ -35,12 +35,13 @@
       </ul>
     </section>
   </nav>
-  <%- flash.each do |key, value| -%>
-    <div class="flash flash-<%= key %>">
-      <%= value %>
-    </div>
-  <%- end -%>
-
+  <div class="flash-errors">
+    <%- flash.each do |key, value| -%>
+      <div class="flash flash-<%= key %>">
+        <%= value %>
+      </div>
+    <%- end -%>
+  </div>
   <%= yield %>
 
   <%= javascript_include_tag 'application' %>
