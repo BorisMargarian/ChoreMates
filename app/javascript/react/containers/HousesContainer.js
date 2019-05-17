@@ -122,13 +122,15 @@ class HousesContainer extends Component {
     } else {
       headerRender = (
         <div className="house-header">
-          <h2 className="">Please join a house!</h2>
-          <input
-            className="button"
-            type="button"
-            value="New House"
-            onClick={this.showHouseForm}
-          />
+          <div className="join">
+            <h2 className="">Please join a house!</h2>
+            <input
+              className="button"
+              type="button"
+              value="New House"
+              onClick={this.showHouseForm}
+            />
+          </div>
         </div>
       )
     }

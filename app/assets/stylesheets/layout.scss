@@ -3,7 +3,15 @@
 .top-bar {
   // background-color: $border-color;
   height: 65px;
-  padding: 10px 5% 0 5%;
+  padding: 10px 10% 0 10%;
+}
+
+.flash-errors {
+  margin: auto;
+  width: 40%;
+  text-align: center;
+  margin-top: 1%;
+  font-size: 1rem;
 }
 
 .chore-image {
@@ -59,6 +67,9 @@ body {
   margin: auto;
   width: 50%;
   margin-top: 15px;
+  border-width: medium;
+  border-color: $border-color;
+  border-style: solid;
 }
 
 h2.form-header {
@@ -93,6 +104,14 @@ h2.form-header {
   margin-top: 2%;
 }
 
+.house-header {
+  .join {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 25px 0 0;
+  }
+}
+
 .header-buttons {
   display: flex;
   justify-content: space-between;
@@ -110,9 +129,33 @@ h2.form-header {
 }
 .password-join, .div-date {
   display: flex;
-  // width: 100%;
+  // display: inline-table;
   justify-content: space-between;
+  // vertical-align: middle;
 }
+
+.div-date {
+  .date {
+    width: 100%;
+  }
+  .cost {
+    width: 50%;
+  }
+}
+
+label {
+  font-size: 1rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+// .div-date label {
+//   padding-top: 5px;
+//   display: inline-table;
+//   vertical-align: middle;
+// }
 
 #chore_due_1i, #chore_due_2i, #chore_due_3i {
   width: 25%;
@@ -133,7 +176,9 @@ h2.form-header {
   margin-right: 25px;
   padding: 10px 10px 10px 10px;
   border-radius: 10px;
-  border-width: medium;
+  border-width: thin;
+  border-color: black;
+  border-style: solid;
   box-shadow: 10px 5px 5px lightslategrey;
   overflow: hidden;
 }
@@ -172,4 +217,27 @@ h2.form-header {
     background-color: $hover-background;
     outline: none;
   }
+}
+
+.current-features, .upcoming-features {
+  padding: 10px 10px 10px 10px;
+  border-color: $border-color;
+  border-radius: 10px;
+  border-width: medium;
+  border-style: solid;
+  margin: auto;
+  width: 30%;
+  max-width: 700px;
+  min-width: 450px;
+  background-color: $light-blue;
+  margin-top: 2%;
+  align-self: center;
+  align-items: center;
+  align-content: center;
+    h3 {
+      text-align: center;
+    }
+    ul {
+      font-size: 1.2rem;
+    }
 }
