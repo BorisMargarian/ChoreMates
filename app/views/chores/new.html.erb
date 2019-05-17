@@ -1,5 +1,5 @@
 <div class="new-chore">
-  <h2>Add New Chore:</h2>
+  <h2>Add New Chore</h2>
   <%= form_for(@chore) do |f| %>
 
     <div class="field">
@@ -12,23 +12,24 @@
       <%= f.text_area :description %>
     </div>
 
-    <div class="field div-date">
-      <%= f.label :due %>
-      <%= f.date_select :due %>
-    </div>
-
-    <div class="field">
-      <%= f.label :cost %>
-      <%= f.number_field :cost %>
+    <div class="div-date">
+      <div class="field date">
+        <%= f.label :due, class: "date-label" %>
+        <%= f.date_select :due %>
+      </div>
+      <div class="field cost">
+        <%= f.label :cost, value: "Cost in $" %>
+        <%= f.number_field :cost %>
+      </div>
     </div>
 
     <div class="field">
       <%= f.label :chore_photo %>
-      <%= f.file_field :chore_photo %>
+      <%= f.file_field :chore_photo, :class => "file-field" %>
     </div>
 
     <div class="actions">
-      <%= f.button "Add", :class => "submit-button"%>
+      <%= f.button "Add", :class => "button"%>
     </div>
   <% end %>
 </div>

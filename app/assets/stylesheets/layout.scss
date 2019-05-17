@@ -59,6 +59,9 @@ body {
   margin: auto;
   width: 50%;
   margin-top: 15px;
+  border-width: medium;
+  border-color: $border-color;
+  border-style: solid;
 }
 
 h2.form-header {
@@ -110,9 +113,33 @@ h2.form-header {
 }
 .password-join, .div-date {
   display: flex;
-  // width: 100%;
+  // display: inline-table;
   justify-content: space-between;
+  // vertical-align: middle;
 }
+
+.div-date {
+  .date {
+    width: 100%;
+  }
+  .cost {
+    width: 50%;
+  }
+}
+
+label {
+  font-size: 1rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+// .div-date label {
+//   padding-top: 5px;
+//   display: inline-table;
+//   vertical-align: middle;
+// }
 
 #chore_due_1i, #chore_due_2i, #chore_due_3i {
   width: 25%;
@@ -133,7 +160,9 @@ h2.form-header {
   margin-right: 25px;
   padding: 10px 10px 10px 10px;
   border-radius: 10px;
-  border-width: medium;
+  border-width: thin;
+  border-color: black;
+  border-style: solid;
   box-shadow: 10px 5px 5px lightslategrey;
   overflow: hidden;
 }

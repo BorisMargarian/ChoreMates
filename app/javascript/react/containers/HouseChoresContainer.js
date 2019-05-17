@@ -113,8 +113,6 @@ class HouseChoresContainer extends Component {
       )
     }
 
-
-
     let choreList = filteredChores.map(chore => {
       let url
       if (chore.chore_photo) {

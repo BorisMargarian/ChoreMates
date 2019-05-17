@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :houses, only: [:index, :show, :update, :create]
       resources :users, only: [:update]
-      resources :chores, only: [:show]
+      resources :chores, only: [:show, :update]
     end
   end
 end
