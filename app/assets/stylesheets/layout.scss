@@ -3,7 +3,15 @@
 .top-bar {
   // background-color: $border-color;
   height: 65px;
-  padding: 10px 5% 0 5%;
+  padding: 10px 10% 0 10%;
+}
+
+.flash-errors {
+  margin: auto;
+  width: 40%;
+  text-align: center;
+  margin-top: 1%;
+  font-size: 1rem;
 }
 
 .chore-image {
@@ -94,6 +102,14 @@ h2.form-header {
   max-width: 700px;
   background-color: $light-blue;
   margin-top: 2%;
+}
+
+.house-header {
+  .join {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 25px 0 0;
+  }
 }
 
 .header-buttons {
@@ -201,4 +217,27 @@ p {
     background-color: $hover-background;
     outline: none;
   }
+}
+
+.current-features, .upcoming-features {
+  padding: 10px 10px 10px 10px;
+  border-color: $border-color;
+  border-radius: 10px;
+  border-width: medium;
+  border-style: solid;
+  margin: auto;
+  width: 30%;
+  max-width: 700px;
+  min-width: 450px;
+  background-color: $light-blue;
+  margin-top: 2%;
+  align-self: center;
+  align-items: center;
+  align-content: center;
+    h3 {
+      text-align: center;
+    }
+    ul {
+      font-size: 1.2rem;
+    }
 }
