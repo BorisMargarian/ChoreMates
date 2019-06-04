@@ -1,11 +1,11 @@
 [![Codeship Status for BorisMargarian/ChoreMates](https://app.codeship.com/projects/0af94010-531c-0137-5019-2a29686d085d/status?branch=master)](https://app.codeship.com/projects/340586)
 
 <h2>ChoreMates</h2>
-I have spent many years living with other people. Keeping our living space clean and fairly distributing common chores have been our biggest issues. ChoreMates is my "capstone" project which attempts to solve these problems.
+<p>I have spent many years living with other people. Keeping our living space clean and fairly distributing common chores have been our biggest issues. ChoreMates is my "capstone" project which attempts to solve these problems.</p>
 
-Devise is used for user registrations. The front-end is built in React.js and integrated with a Rails back-end. Users can create, claim, and complete household chores. Chore and review image uploads are handled by CarrierWave and stored remotely on AWS.
+<p>Devise is used for user registrations. The front-end is built in React.js and integrated with a Rails back-end. Users can create, claim, and complete household chores. Chore image uploads are handled by CarrierWave and stored remotely on AWS.</p>
 
-Contributors:<a href="https://github.com/BorisMargarian">Boris Margarian</a>
+Contributors: <a href="https://github.com/BorisMargarian"> Boris Margarian</a>
 
 <h3>See the Live Version Here:</h3>
 https://choremates.herokuapp.com/
