@@ -7,5 +7,18 @@ FactoryBot.define do
     password { 'password' }
     password_confirmation { 'password' }
   end
+end
 
+FactoryBot.define do
+  factory :house do
+    sequence(:name) {|n| "Test House#{n}"}
+    password { 'test-house' }
+  end
+end
+
+FactoryBot.define do
+  factory :chore do
+    sequence(:name) {|n| "Test Chore#{n}"}
+    house { House.first }
+  end
 end

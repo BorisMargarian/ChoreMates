@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let!(:test_user) {User.create(username: 'Test User', email: 'test.user@gmail.com', password: 'test-user')}
-  let!(:failed_user) {User.create()}
+  let(:test_user) {User.create(username: 'Test User', email: 'test.user@gmail.com', password: 'test-user')}
+  let(:failed_user) {User.create()}
   let(:errors) {failed_user.errors.full_messages}
   let(:test_house) {House.create(name: 'Test House', password: 'test-house')}
   let(:test_house1) {House.create(name: 'Test House1', password: 'test-house1')}
@@ -23,7 +23,7 @@ RSpec.describe User, type: :model do
   end
 
   scenario 'two users cannot have the same: username or email' do
-    failed_user.update_attributes(username: 'Test User', email: 'test.user@gmail.com')
+    failed_user.update_attributes(test_user.attributes)
     expect(errors.length).to be 3
     expect(errors).to include('Username has already been taken')
     expect(errors).to include('Email has already been taken')
