@@ -32,10 +32,24 @@ RSpec.describe House, type: :model do
   scenario 'a house can have many users' do
     test_house.users << user_list
     expect(test_house.users.size).to eq 3
+
+    #Found a better way to test associations online
+    assc = described_class.reflect_on_association(:users)
+    expect(assc.macro).to eq :has_many
+
+    #Got the shoulda gem to work!
+    should have_many(:users)
   end
 
   scenario 'a house can have many chores' do
     test_house.chores << chore_list
     expect(test_house.chores.size).to eq 3
+
+    #Found a better way to test associations online
+    assc = described_class.reflect_on_association(:chores)
+    expect(assc.macro).to eq :has_many
+
+    #Got the shoulda gem to work!
+    should have_many(:chores)
   end
 end
